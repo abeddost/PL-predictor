@@ -179,7 +179,7 @@ const TeamCredits = () => {
           
           <div className="mt-12 pt-8 border-t border-gray-200">
             <p className="text-gray-500">
-              © 2024 MIT Emerging Talent Program • Data Science for Football Analytics
+              © 2025 MIT Emerging Talent Program • Data Science for Football Analytics
             </p>
           </div>
         </div>

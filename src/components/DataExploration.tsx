@@ -177,15 +177,31 @@ const DataExploration = () => {
             <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               Number of Transfers by Position
             </h3>
-            <ResponsiveContainer width="100%" height={400}>
-              <BarChart data={transferData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="position" tick={{ angle: -45, textAnchor: 'end' }} height={100} />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="count" fill="#8884d8" />
-              </BarChart>
-            </ResponsiveContainer>
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[600px]">
+                <ResponsiveContainer width="100%" height={400}>
+                  <BarChart data={transferData} margin={{ top: 20, right: 30, left: 20, bottom: 100 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis 
+                      dataKey="position" 
+                      tick={{ angle: -45, textAnchor: 'end', fontSize: 12 }} 
+                      height={100}
+                      interval={0}
+                    />
+                    <YAxis tick={{ fontSize: 12 }} />
+                    <Tooltip 
+                      contentStyle={{ 
+                        backgroundColor: 'white', 
+                        border: '1px solid #e5e7eb',
+                        borderRadius: '8px',
+                        fontSize: '14px'
+                      }}
+                    />
+                    <Bar dataKey="count" fill="#8884d8" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </div>
 
           {/* Top Transfers Chart */}
@@ -193,21 +209,33 @@ const DataExploration = () => {
             <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               Top 10 Most Expensive Transfers
             </h3>
-            <ResponsiveContainer width="100%" height={500}>
-              <BarChart data={topTransfers} layout="vertical" margin={{ top: 20, right: 30, left: 200, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis type="number" tickFormatter={(value) => `$${value}M`} />
-                <YAxis type="category" dataKey="name" width={180} />
-                <Tooltip formatter={(value) => [`$${value}M`, 'Transfer Fee']} />
-                <Bar dataKey="fee" >
-                  {
-                    topTransfers.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={`#${(70-index*7).toString(16).padStart(2, '0')}${(120-index*12).toString(16).padStart(2, '0')}70`} />
-                    ))
-                  }
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[700px]">
+                <ResponsiveContainer width="100%" height={500}>
+                  <BarChart data={topTransfers} layout="vertical" margin={{ top: 20, right: 30, left: 200, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis type="number" tickFormatter={(value) => `$${value}M`} tick={{ fontSize: 12 }} />
+                    <YAxis type="category" dataKey="name" width={180} tick={{ fontSize: 11 }} />
+                    <Tooltip 
+                      formatter={(value) => [`$${value}M`, 'Transfer Fee']}
+                      contentStyle={{ 
+                        backgroundColor: 'white', 
+                        border: '1px solid #e5e7eb',
+                        borderRadius: '8px',
+                        fontSize: '14px'
+                      }}
+                    />
+                    <Bar dataKey="fee" >
+                      {
+                        topTransfers.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={`#${(70-index*7).toString(16).padStart(2, '0')}${(120-index*12).toString(16).padStart(2, '0')}70`} />
+                        ))
+                      }
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </div>
 
           {/* Spending by Season Chart */}
@@ -215,17 +243,33 @@ const DataExploration = () => {
             <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               Total Transfer Spending by Season
             </h3>
-            <ResponsiveContainer width="100%" height={400}>
-              <LineChart data={spendingData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="season" />
-                <YAxis tickFormatter={(value) => `$${value}M`} />
-                <Tooltip formatter={(value) => [`$${value}M`, 'Transfer Fee']} />
-                <Line type="monotone" dataKey="fee" stroke="#3b82f6" strokeWidth={3} activeDot={{ r: 8 }}>
-                  <Dot />
-                </Line>
-              </LineChart>
-            </ResponsiveContainer>
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[500px]">
+                <ResponsiveContainer width="100%" height={400}>
+                  <LineChart data={spendingData} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis 
+                      dataKey="season" 
+                      tick={{ angle: -45, textAnchor: 'end', fontSize: 12 }} 
+                      height={60}
+                    />
+                    <YAxis tickFormatter={(value) => `$${value}M`} tick={{ fontSize: 12 }} />
+                    <Tooltip 
+                      formatter={(value) => [`$${value}M`, 'Transfer Fee']}
+                      contentStyle={{ 
+                        backgroundColor: 'white', 
+                        border: '1px solid #e5e7eb',
+                        borderRadius: '8px',
+                        fontSize: '14px'
+                      }}
+                    />
+                    <Line type="monotone" dataKey="fee" stroke="#3b82f6" strokeWidth={3} activeDot={{ r: 8 }}>
+                      <Dot />
+                    </Line>
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </div>
 
           {/* Rating Distribution Chart */}
@@ -233,16 +277,37 @@ const DataExploration = () => {
             <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               Distribution of Average Rating (Pre vs Post Transfer)
             </h3>
-            <ResponsiveContainer width="100%" height={400}>
-              <BarChart data={ratingData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="rating" />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="pre" fill="#8884d8" opacity={0.7} />
-                <Bar dataKey="post" fill="#82ca9d" opacity={0.7} />
-              </BarChart>
-            </ResponsiveContainer>
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[600px]">
+                <ResponsiveContainer width="100%" height={400}>
+                  <BarChart data={ratingData} margin={{ top: 20, right: 30, left: 20, bottom: 40 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="rating" tick={{ fontSize: 12 }} />
+                    <YAxis tick={{ fontSize: 12 }} />
+                    <Tooltip 
+                      contentStyle={{ 
+                        backgroundColor: 'white', 
+                        border: '1px solid #e5e7eb',
+                        borderRadius: '8px',
+                        fontSize: '14px'
+                      }}
+                    />
+                    <Bar dataKey="pre" fill="#8884d8" opacity={0.7} />
+                    <Bar dataKey="post" fill="#82ca9d" opacity={0.7} />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+            <div className="flex justify-center mt-4 gap-6 text-sm">
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 bg-blue-400 opacity-70 rounded"></div>
+                <span className="text-gray-600">Pre Transfer</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 bg-green-400 opacity-70 rounded"></div>
+                <span className="text-gray-600">Post Transfer</span>
+              </div>
+            </div>
           </div>
 
           <div className="bg-gradient-to-r from-blue-50 to-emerald-50 rounded-2xl p-8 md:p-12">
