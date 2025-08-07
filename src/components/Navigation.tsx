@@ -79,8 +79,8 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 rounded-lg ${
             aria-label={isMobileMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
+            className={`md:hidden p-2 rounded-lg ${
               isScrolled ? 'text-gray-700' : 'text-white'
             }`}
           >
