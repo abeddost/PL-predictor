@@ -2,12 +2,74 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Premier League Success Predictor | Football Analytics & Machine Learning</title>
+    <meta name="description" content="Discover which players from lower-tier European leagues are most likely to succeed in the Premier League using advanced machine learning and data analytics. 83% accuracy for attackers." />
+    <meta name="keywords" content="Premier League, football analytics, machine learning, player transfers, football statistics, soccer prediction, data science, MIT research" />
+    <meta name="author" content="MIT Emerging Talent Program" />
+    <meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>European Football Analytics Website</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://premier-league-predictor.netlify.app/" />
+    <meta property="og:title" content="Premier League Success Predictor | Football Analytics & Machine Learning" />
+    <meta property="og:description" content="Discover which players from lower-tier European leagues are most likely to succeed in the Premier League using advanced machine learning and data analytics." />
+    <meta property="og:image" content="https://premier-league-predictor.netlify.app/og-image.jpg" />
+    <meta property="og:site_name" content="Premier League Success Predictor" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://premier-league-predictor.netlify.app/" />
+    <meta property="twitter:title" content="Premier League Success Predictor | Football Analytics & Machine Learning" />
+    <meta property="twitter:description" content="Discover which players from lower-tier European leagues are most likely to succeed in the Premier League using advanced machine learning and data analytics." />
+    <meta property="twitter:image" content="https://premier-league-predictor.netlify.app/og-image.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://premier-league-predictor.netlify.app/" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ResearchProject",
+      "name": "Premier League Success Predictor",
+      "description": "Machine learning research project analyzing which players from lower-tier European leagues are most likely to succeed in the Premier League",
+      "url": "https://premier-league-predictor.netlify.app/",
+      "author": {
+        "@type": "Organization",
+        "name": "MIT Emerging Talent Program",
+        "url": "https://emergingtalent.mit.edu/"
+      },
+      "datePublished": "2025-01-27",
+      "keywords": ["Premier League", "football analytics", "machine learning", "player transfers", "data science"],
+      "about": {
+        "@type": "Thing",
+        "name": "Football Analytics"
+      },
+      "mainEntity": {
+        "@type": "Dataset",
+        "name": "Premier League Transfer Success Dataset",
+        "description": "Analysis of 149 players who transferred from lower-tier leagues to the Premier League",
+        "variableMeasured": ["player performance", "transfer success", "position-specific metrics"]
+      }
+    }
+    </script>
   </body>
 </html>

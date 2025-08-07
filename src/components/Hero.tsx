@@ -16,33 +16,33 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 py-20 flex flex-col justify-center min-h-screen">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-8">
-            <div className="bg-gradient-to-br from-emerald-100 to-blue-100 rounded-2xl p-6 hover:from-emerald-200 hover:to-blue-200 transition-all duration-300 hover:scale-110 hover:rotate-3">
-              <BarChart3 className="w-12 h-12 text-emerald-600 hover:text-blue-600 transition-colors duration-300" />
+            <div className="bg-gradient-to-br from-emerald-100 to-blue-100 rounded-2xl p-6 hover:from-emerald-200 hover:to-blue-200 transition-all duration-300 hover:scale-110 hover:rotate-3" role="img" aria-label="Analytics chart icon">
+              <BarChart3 className="w-12 h-12 text-emerald-600 hover:text-blue-600 transition-colors duration-300" alt="Data analytics and machine learning visualization" />
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" itemProp="headline">
             Predicting
             <span className="text-emerald-400 block">Premier League</span>
             Success
           </h1>
           
-          <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed" itemProp="description">
             Using machine learning to identify which players from lower-tier European leagues 
             are most likely to thrive in England's top flight
           </p>
           
           <div className="flex flex-wrap justify-center gap-6 mb-12">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3">
-              <Target className="w-6 h-6 text-emerald-400" />
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3" role="img" aria-label="149 players analyzed statistic">
+              <Target className="w-6 h-6 text-emerald-400" alt="Target icon representing analyzed players" />
               <span className="text-lg font-semibold">149 Players Analyzed</span>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3">
-              <Users className="w-6 h-6 text-amber-400" />
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3" role="img" aria-label="3 positions studied statistic">
+              <Users className="w-6 h-6 text-amber-400" alt="Users icon representing different player positions" />
               <span className="text-lg font-semibold">3 Positions Studied</span>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3">
-              <BarChart3 className="w-6 h-6 text-blue-400" />
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3" role="img" aria-label="Up to 83% accuracy statistic">
+              <BarChart3 className="w-6 h-6 text-blue-400" alt="Bar chart icon representing model accuracy" />
               <span className="text-lg font-semibold">Up to 83% Accuracy</span>
             </div>
           </div>

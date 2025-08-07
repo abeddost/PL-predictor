@@ -33,24 +33,25 @@ const Navigation = () => {
       isScrolled 
         ? 'bg-white/95 backdrop-blur-sm shadow-lg' 
         : 'bg-transparent'
-    }`}>
+    }`} role="navigation" aria-label="Main navigation">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button
             onClick={() => scrollToSection('hero')}
             className="flex items-center gap-3 font-bold text-xl hover:scale-105 transition-transform"
+            aria-label="Go to homepage - Premier League Predictor"
           >
             <div className={`rounded-2xl p-2 transition-all duration-300 hover:scale-110 hover:rotate-6 group ${
               isScrolled 
                 ? 'bg-gradient-to-br from-blue-100 to-indigo-100 hover:from-blue-200 hover:to-indigo-200' 
                 : 'bg-gradient-to-br from-white/20 to-blue-200/20 backdrop-blur-sm hover:from-white/30 hover:to-blue-200/30'
-            }`}>
+            }`} role="img" aria-label="Analytics chart logo">
               <BarChart3 className={`w-6 h-6 ${
                 isScrolled 
                   ? 'text-blue-600 group-hover:text-indigo-600' 
                   : 'text-white group-hover:text-blue-100'
-              } transition-colors duration-300`} />
+              } transition-colors duration-300`} alt="Premier League Predictor logo" />
             </div>
             <span className={isScrolled ? 'text-gray-900' : 'text-white'}>
               PL Predictor
@@ -63,6 +64,7 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
+                aria-label={`Navigate to ${item.label} section`}
                 className={`font-medium hover:scale-105 transition-all duration-200 ${
                   isScrolled 
                     ? 'text-gray-700 hover:text-blue-600' 
@@ -78,6 +80,7 @@ const Navigation = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-2 rounded-lg ${
+            aria-label={isMobileMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
               isScrolled ? 'text-gray-700' : 'text-white'
             }`}
           >
@@ -87,13 +90,15 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-lg">
+          <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-lg" role="menu" aria-label="Mobile navigation menu">
             <div className="py-4 space-y-2">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium"
+                  role="menuitem"
+                  aria-label={`Navigate to ${item.label} section`}
                 >
                   {item.label}
                 </button>
